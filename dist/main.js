@@ -72,7 +72,7 @@ __webpack_require__(1);
 var SDK = __webpack_require__(19);
 var sdk = new SDK();
 
-var text, height, link, color, imgurl;
+var etitle, edate, elocation, edetails, elink;
 
 function debounce (func, wait, immediate) {
 	var timeout;
@@ -90,50 +90,46 @@ function debounce (func, wait, immediate) {
 }
 
 function createSettings () {
-	document.getElementById('text-input-id-0').value = imgurl;
-	document.getElementById('text-input-id-1').value = text;
-	document.getElementById('slider-id-02').value = height;
-	document.getElementById('text-input-id-2').value = link;
-	document.getElementById('drop-id-0').value = color;
+	document.getElementById('text-input-id-0').value = etitle;
+	document.getElementById('text-input-id-1').value = edate;
+	document.getElementById('text-input-id-2').value = elocation;
+	document.getElementById('text-input-id-3').value = edetails;
+	document.getElementById('text-input-id-3').value = elink;
 } 
 
-function createSliderValues () {
-	
-	document.getElementById('slider-id-02-val').innerHTML = document.getElementById('slider-id-02').value;
-	
-}
 
 function createblock() {
-	imgurl = document.getElementById('text-input-id-0').value;
-	text = document.getElementById('text-input-id-1').value;
-	height = document.getElementById('slider-id-02').value;
-	color = document.getElementById('drop-id-0').value
-	link = document.getElementById('text-input-id-2').value;
+	etitle = document.getElementById('text-input-id-0').value;
+	edate = document.getElementById('text-input-id-1').value;
+	elocation = document.getElementById('slider-id-02').value;
+	edetails = document.getElementById('drop-id-0').value
+	elink = document.getElementById('text-input-id-2').value;
 	if (!text) {
 		return;
 	}
-	var url = "<table width='100%' border='0' cellspacing='0' cellpadding='0'> <tbody> <tr> <td style='background-repeat:no-repeat;background-position: center;' background='" + imgurl + "' bgcolor='#ffffff' width='600' height='" + height + "' valign='top'> <!--[if gte mso 9]> <v:rect xmlns:v='urn:schemas-microsoft-com:vml' fill='true' stroke='false' style='background-repeat:no-repeat; width:600px;height:" + height + "px;'> <v:fill type='tile' src='" + imgurl + "' color='#ffffff' /> <v:textbox inset='0,0,0,0'> <![endif]--> <div> <table width='100%' border='0' cellspacing='0' cellpadding='0'> <tbody> <tr><td align='center' valign='top'><table width='100%' border='0' cellspacing='0' cellpadding='0'> <tbody> <tr> <td align='left' valign='top' style='padding-top: 110px;color:#" + color + "; padding-left: 70px; padding-right: 70px; font-size: 48px;line-height: normal;'><a style='color:#" + color + ";font-size: 48px;line-height: normal;Text-decoration: none;' href='" + link + "'><center>" + text + "</center></a></td> </tr> </tbody> </table></td> </tr> </tbody> </table> </div> <!--[if gte mso 9]> </v:textbox> </v:rect> <![endif]--> </td> </tr> </tbody> </table>";
-	
+	var url = "<table cellpadding="0" cellspacing="0" width="100%" style="border-bottom: 1px solid #AEAEAE; min-width: 100%; " class="slot-styling"><tr><td style="padding-top: 10px; padding-bottom: 10px; " class="slot-styling camarker-inner"><table cellpadding="0" cellspacing="0" width="100%" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td style="padding-top: 10px; padding-right: 10px; padding-left: 10px; " class="stylingblock-content-wrapper camarker-inner"><table cellspacing="0" cellpadding="0" style="width: 100%;"><tr><td><table cellspacing="0" cellpadding="0" style="width: 100%;"><tr><td class="responsive-td" valign="top" style="width: 100%;"><table cellpadding="0" cellspacing="0" width="100%" style="text-align: left; min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner" align="left"><h1 style="font-family:Arial, helvetica, sans-serif;font-size:28px;color:#2C155C;line-height:100%;font-weight:bold;font-style:normal;">'" + etitle + "'</h1><div>Hi %%First Name%%,<br><br>'" + edetails + "'</div><h3 style="color:#2C155C;font-family:arial,helvetica,sans-serif;font-size:20px;font-style:normal;font-weight:bold;line-height:1;">Event: '" + etitle + "'<br><br>Date:&nbsp;'" + edate + "'#<br><br>Loction:&nbsp;'" + elocation + "'</h3></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" style="text-align: left; min-width: 100%; " class="stylingblock-content-wrapper"><tr><td style="padding-top: 20px; padding-bottom: 20px; " class="stylingblock-content-wrapper camarker-inner" align="left"><table width="100%" border="0" cellspacing="0" cellpadding="5"><tr><td align="center"><table border="0" cellspacing="0" cellpadding="0"><tr><td class="innertd buttonblock" align="center" bgcolor="#FFA23E" style=" border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; color: #FFFFFF; background-color: #FFA23E;"><a target="_blank" style=" text-decoration: none; display: block; font-family: Arial, helvetica, sans-serif; font-size: 16px; color: #FFFFFF; line-height: 100%; text-align: center; background-color: #FFA23E; border: 1px solid #FFA23E; padding: 10px 90px; border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px;" class="buttonstyles" href="'" + elink + "'" title="" alias="" conversion="false" data-linkto="http://">RSVP to Event</a></td></tr></table></td></tr></table></td></tr></table></td></tr></table></td></tr></table></td></tr></table></td></tr></table>"
 	
 	sdk.setContent(url);
 	sdk.setData({
-		text: text,
-		height: height,
-		color: color,
-		link: link,
-		imgurl: imgurl
+		etitile: etitle,
+		edate: edate,
+		elocation: elocation,
+		edetails: edetails,
+		elink: elink
 	});
 
 }
 
 sdk.getData(function (data) {
-	text = data.text || 'Text Over Image';
-	height = data.height || 240;
-	link = data.link || '';
-	color = data.color || '';
-	imgurl = data.imgurl || 'https://image.s4.exct.net/lib/fe911573736c007d7d/m/2/f3bcb75d-176b-4412-83f3-e70dc1c591c8.png';
+	etitle = data.etitle || '##Event Title##';
+	edate = data.edate || '##Event Date##';
+	elocation = data.elocation || '##Loctaion##';
+	edetails = data.edetails || '##Details##';
+	elink = data.elink || 'http://link.com';
+	
+	
 	createSettings();
-	createSliderValues();
+	
 	createblock();
 });
 
