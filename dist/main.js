@@ -104,7 +104,7 @@ function createblock() {
 	elocation = document.getElementById('text-input-id-2').value;
 	edetails = document.getElementById('text-input-id-3').value
 	elink = document.getElementById('text-input-id-4').value;
-	if (!text) {
+	if (!etitle) {
 		return;
 	}
 	var url = " <table cellpadding='0' cellspacing='0' width='100%' style='border-bottom: 1px solid #AEAEAE; min-width: 100%; ' class='slot-styling'><tr><td style='padding-bottom: 20px; ' class='slot-styling camarker-inner'><table cellpadding='0' cellspacing='0' width='100%' style='min-width: 100%; ' class='stylingblock-content-wrapper'><tr><td style='padding-top: 10px; padding-right: 10px; padding-left: 10px; ' class='stylingblock-content-wrapper camarker-inner'><table cellspacing='0' cellpadding='0' style='width: 100%;'><tr><td><table cellspacing='0' cellpadding='0' style='width: 100%;'><tr><td class='responsive-td' valign='top' style='width: 100%;'><table cellpadding='0' cellspacing='0' width='100%' style='text-align: left; min-width: 100%; ' class='stylingblock-content-wrapper'><tr><td class='stylingblock-content-wrapper camarker-inner' align='left'><h1 style='font-family:Arial, helvetica, sans-serif;font-size:28px;color:#2C155C;line-height:100%;font-weight:bold;font-style:normal;'>##TITLE##</h1><div>Hi %%First Name%%,<br><br>##Details##.&nbsp;</div><h3 style='color:#2C155C;font-family:arial,helvetica,sans-serif;font-size:20px;font-style:normal;font-weight:bold;line-height:1;'>Event: ##DETAILS##<br><br>Date:&nbsp;##DATE##<br><br>Loction:&nbsp;##LOCATION##</h3></td></tr></table><table cellpadding='0' cellspacing='0' width='100%' style='text-align: left; min-width: 100%; ' class='stylingblock-content-wrapper'><tr><td style='padding-top: 20px; padding-bottom: 20px; ' class='stylingblock-content-wrapper camarker-inner' align='left'><table width='100%' border='0' cellspacing='0' cellpadding='5'><tr><td align='center'><table border='0' cellspacing='0' cellpadding='0'><tr><td class='innertd buttonblock' align='center' bgcolor='#FFA23E' style=' border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; color: #FFFFFF; background-color: #FFA23E;'><a target='_blank' style=' text-decoration: none; display: block; font-family: Arial, helvetica, sans-serif; font-size: 16px; color: #FFFFFF; line-height: 100%; text-align: center; background-color: #FFA23E; border: 1px solid #FFA23E; padding: 10px 90px; border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px;' class='buttonstyles' href='http://' title='' alias='' conversion='false' data-linkto='http://'>RSVP to Event</a></td></tr></table></td></tr></table></td></tr></table></td></tr></table></td></tr></table></td></tr></table></td></tr></table>"
@@ -134,13 +134,8 @@ sdk.getData(function (data) {
 
 document.getElementById('workspace').addEventListener("input", function () {
 	debounce(createblock, 500)();
-	createSliderValues();
 });
-	document.getElementById('drop-id-0').addEventListener("change", function () {
-	debounce(createblock, 500)();
-	createSliderValues();
-});
-
+	
 
 /***/ }),
 /* 1 */
